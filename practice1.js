@@ -39,3 +39,34 @@ function addTwoNumbers(l1, l2) {
     }
     return answer.next; // return the answer list
 }
+
+// Given a string s, find the length of the longest substring without repeating characters.
+
+function lengthOfLongestSubstring(s) {
+    let answer = 0; // create a variable to store the length of the longest substring
+    let current = ''; // create a variable to store the current substring
+    for (var i = 0; i < s.length; i++) { // iterate through the string
+        if (current.indexOf(s[i]) === -1) { // if the current substring does not contain the current character
+            current += s[i]; // add the current character to the current substring
+            answer = Math.max(answer, current.length); // update the length of the longest substring
+        } else { // if the current substring contains the current character
+            current = current.substring(current.indexOf(s[i]) + 1) + s[i]; // update the current substring to start at the index of the current character plus one
+        }
+    }
+    return answer; // return the length of the longest substring
+}
+
+// Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+// The overall run time complexity should be O(log (m+n)).
+
+function findMedianSortedArrays(nums1, nums2) {
+    let answer = 0; // create a variable to store the median of the two sorted arrays
+    let nums = nums1.concat(nums2); // create a new array to store the two sorted arrays
+    nums.sort((a, b) => a - b); // sort the new array
+    if (nums.length % 2 === 0) { // if the length of the new array is even
+        answer = (nums[nums.length / 2] + nums[nums.length / 2 - 1]) / 2; // calculate the median of the two middle numbers
+    } else { // if the length of the new array is odd
+        answer = nums[Math.floor(nums.length / 2)]; // calculate the median of the middle number
+    }
+    return answer; // return the median of the two sorted arrays
+}
