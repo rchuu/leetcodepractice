@@ -70,3 +70,17 @@ function findMedianSortedArrays(nums1, nums2) {
     }
     return answer; // return the median of the two sorted arrays
 }
+
+// Given a string s, return the longest palindromic substring in s.
+
+function longestPalindrome(s) {
+    let answer = ''; // create a variable to store the longest palindrome
+    for (var i = 0; i < s.length; i++) { // iterate through the string
+        for (var j = i + 1; j <= s.length; j++) { // iterate through the string again, starting at the next index of i
+            if (isPalindrome(s.substring(i, j))) { // if the substring is a palindrome
+                answer = Math.max(answer, s.substring(i, j)); // update the longest palindrome
+            }
+        }
+    }
+    return answer; // return the longest palindrome
+}
