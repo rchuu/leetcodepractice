@@ -29,4 +29,31 @@ function nthRoot(n, x) {
     }
     return answer; // return the nth root of x
 }
+// write a palindrome function to determine if x is palindrone without coverting it to a string
+function isPalindrome(x) {
+    let answer = true; // create a variable to store the answer
+    let i = 0; // create a variable to store the index of the first character of x
+    let j = x.length - 1; // create a variable to store the index of the last character of x
+    while (i < j) { // while the index of the first character of x is less than the index of the last character of x
+        if (x[i] !== x[j]) { // if the first character of x is not equal to the last character of x
+            answer = false; // update the answer to false
+            break; // break out of the while loop
+        }
+        i++; // increment the index of the first character of x
+        j--; // decrement the index of the last character of x
+    }
+    return answer; // return the answer
+}
 
+var isPalindrome = function (x) {
+    let array = [];
+    for (i in x) {
+        array.push(x[i]);
+    }
+    for (let j = 0; j < array.length / 2; j++) {
+        if (array[j] !== array[array.length - 1 - j]) {
+            return false;
+        }
+    }
+    return true; // return true
+}
