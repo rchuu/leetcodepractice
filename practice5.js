@@ -63,6 +63,5 @@ var threeSumClosest = function (nums, target) {
             }
         }
     }
-
     return result; // return the result
 };
