@@ -57,7 +57,6 @@ function array255() {
 }
 
 // Write a function that would get the sum of all the even numbers from 1 to 1000. You may use a modulus operator for this exercise.
-
 function sumEven() {
     var sum = 0;
     for (var i = 0; i <= 1000; i++) {
